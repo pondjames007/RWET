@@ -77,8 +77,9 @@ count = 0
 
 for key in rules:
     if count < 8:
-        poem.append(grammar.flatten("#"+key+"#"))
-        poemStr += grammar.flatten("#"+key+"#") + "\n"
+        sen = grammar.flatten("#"+key+"#")
+        poem.append(sen)
+        poemStr += sen + "\n"
     else:
         break
     count += 1
@@ -112,6 +113,6 @@ for sentence in sentences:
                 bound = count
                 count = len(words)
 
-subprocess.call(["convert","-delay", "200", "frames/*.jpg", "output.gif"])
+subprocess.call(["convert","-delay", "150", "frames/*.jpg", "output.gif"])
 driver = webdriver.Chrome()
 driver.get("file:///Users/pondjames007/Desktop/ITP_Classes/RWET/finalProject/output.gif")
